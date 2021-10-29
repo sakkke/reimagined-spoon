@@ -1,0 +1,72 @@
+{
+  "name": "svelte-ultimate-template",
+  "version": "0.1.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "build": "parcel build --dist-dir public",
+    "clean": "find public -type f | grep -v public/browserconfig.xml | xargs rm",
+    "cmd:clear": "clear",
+    "dev": "tmux new \\; send 'npm run lint:watch' C-m \\; splitw \\; send 'npm run lint:style:watch' C-m \\; splitw \\; send 'npm run test:watch' C-m \\; selectl even-horizontal \\; splitw -bf \\; send 'npm run serve' C-m",
+    "lint": "eslint '**/*.svelte'",
+    "lint:all": "run-s lint lint:style",
+    "lint:style": "stylelint -f verbose '**/*.svelte'",
+    "lint:style:watch": "onchange '**/*.svelte' -- run-s cmd:clear lint:style",
+    "lint:watch": "esw --clear --color --ext .js,.svelte,.ts --ignore-path .eslintignore -w '**/*.{js,svelte,ts}'",
+    "serve": "parcel serve --dist-dir public",
+    "start": "parcel --dist-dir public",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakkke/svelte-ultimate-template.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/sakkke/svelte-ultimate-template/issues"
+  },
+  "homepage": "https://github.com/sakkke/svelte-ultimate-template#readme",
+  "devDependencies": {
+    "@jest/types": "^27.2.5",
+    "@parcel/packager-raw-url": "^2.0.0",
+    "@parcel/transformer-webmanifest": "^2.0.0",
+    "@pyoner/svelte-types": "^3.4.4-2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/svelte": "^3.0.3",
+    "@types/node": "^16.11.4",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard-with-typescript": "^21.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "eslint-watch": "^7.0.0",
+    "jest": "^27.3.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "parcel": "^2.0.0",
+    "parcel-transformer-svelte": "github:sakkke/parcel-transformer-svelte#fixes",
+    "postcss": "^8.3.11",
+    "postcss-load-config": "^3.1.0",
+    "precss": "^4.0.0",
+    "strip-indent": "^4.0.0",
+    "stylelint": "^14.0.0",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-standard": "^23.0.0",
+    "sugarss": "^2.0.0",
+    "svelte-jester": "^2.1.5",
+    "svelte-preprocess": "^4.9.8",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "destyle.css": "^3.0.0",
+    "svelte": "^3.44.0",
+    "svelte-spa-router": "^3.2.0"
+  }
+}

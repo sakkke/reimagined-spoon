@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: npm i
+    command: npm run dev
+
+vscode:
+  extensions:
+    - csstools.postcss
+    - dbaeumer.vscode-eslint
+    - editorconfig.editorconfig
+    - stylelint.vscode-stylelint
+    - svelte.svelte-vscode
