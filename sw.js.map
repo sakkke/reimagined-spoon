@@ -1,0 +1,1 @@
+{"mappings":"AAAAA,KAAKC,iBAAiB,SAAO","sources":["src/sw.ts"],"sourcesContent":["self.addEventListener('fetch', () => {})\n"],"names":["self","addEventListener"],"version":3,"file":"sw.js.map"}
